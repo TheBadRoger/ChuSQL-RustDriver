@@ -1,0 +1,13 @@
+[package]
+name = "chusql-driver"
+version = "0.1.0"
+edition = "2024"
+description = "Lightweight asynchronous Rust driver for ChuSQL"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["arbitrary_precision"] }
+tokio = { version = "1", features = ["net", "io-util", "sync", "time"] }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
