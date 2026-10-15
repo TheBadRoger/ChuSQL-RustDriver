@@ -6,13 +6,22 @@
 
 ## 接入
 
+可从以下任一仓库接入：
+
+- [GitHub](https://github.com/TheBadRoger/ChuSQL-RustDriver.git)
+- [ChuRepo](https://repo.chunana.cn/ChuNa7a/ChuSQL-RustDriver.git)
+
 在后端项目的 `Cargo.toml` 中添加：
 
 ```toml
 [dependencies]
-chusql-driver = { path = "../ChuSQLDriver" }
+chusql-driver = { git = "https://github.com/TheBadRoger/ChuSQL-RustDriver.git" }
+# 也可改用 ChuRepo（二选一）：
+# chusql-driver = { git = "https://repo.chunana.cn/ChuNa7a/ChuSQL-RustDriver.git" }
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 ```
+
+若已克隆到本地，也可使用 `chusql-driver = { path = "../ChuSQLDriver" }`。
 
 ```rust,no_run
 use chusql_driver::{Client, Error};
